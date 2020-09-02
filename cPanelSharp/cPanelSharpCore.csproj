@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>cPanelSharp</RootNamespace>
+    <VersionPrefix>4.0.0</VersionPrefix>
+    <Authors>Shrayas, zeal</Authors>
+    <Company>Shrayas, zeal</Company>
+    <Description>A simple C# wrapper for accessing cPanel APIs</Description>
+    <Copyright>Copyright 2016, 2020</Copyright>
+    <PackageTags>api wrapper cpanel</PackageTags>
+    <PackageReleaseNotes>No functionality changes from 3.0.0 and full drop-in replacement</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/zealofzebras/cPanelSharp</PackageProjectUrl>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/zealofzebras/cPanelSharp</RepositoryUrl>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RestSharp" Version="106.0.1" />
+  </ItemGroup>
+
+</Project>

@@ -4,17 +4,17 @@
     <id>$id$</id>
     <version>$version$</version>
     <title>$title$</title>
-    <authors>Shrayas</authors>
+    <authors>Shrayas, zeal</authors>
     <owners>$author$</owners>
     <licenseUrl>https://github.com/shrayasr/cPanelSharp/blob/master/LICENSE</licenseUrl>
-    <projectUrl>https://github.com/shrayasr/cPanelSharp</projectUrl>
+    <projectUrl>https://github.com/zealofzebras/cPanelSharp</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A simple C# wrapper for accessing cPanel APIs</description>
-    <releaseNotes>First version</releaseNotes>
+    <releaseNotes>.NetStandard Version</releaseNotes>
     <copyright>Copyright 2016</copyright>
     <tags>api wrapper</tags>
     <dependencies>
-      <dependency id="RestSharp" version="105.2.3" />
+      <dependency id="RestSharp" version="106.0.1" />
     </dependencies>
   </metadata>
 </package>
