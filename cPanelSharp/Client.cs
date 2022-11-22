@@ -2,6 +2,7 @@
 using RestSharp.Authenticators;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace cPanelSharp
 {
@@ -87,7 +88,7 @@ namespace cPanelSharp
             else
                 client.Authenticator = new HttpBasicAuthenticator(_username, _password);
 
-            var request = new RestRequest(Method.GET);
+            var request = new RestRequest();
 
             foreach (var entry in parameters)
                 request.AddParameter(entry.Key, entry.Value);
@@ -125,9 +126,14 @@ namespace cPanelSharp
             _authHeader = string.Format("WHM {0}:{1}", username, accessHash);
         }
 
-        public void Authenticate(IRestClient client, IRestRequest request)
+        public void Authenticate(RestClient client, RestRequest request)
         {
             request.AddParameter("Authorization", _authHeader, ParameterType.HttpHeader); 
+        }
+
+        ValueTask IAuthenticator.Authenticate(RestClient client, RestRequest request)
+        {
+            return new ValueTask(Task.FromResult(new HeaderParameter(KnownHeaders.Authorization, _authHeader)));
         }
     }
 }
