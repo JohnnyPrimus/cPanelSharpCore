@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace cPanelSharp
+namespace cPanelSharpCore
 {
     public class MissingCredentialsException : Exception { }
     public class InvalidCredentialsException : Exception { }

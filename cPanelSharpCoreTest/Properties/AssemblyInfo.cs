@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("cPanelSharpTest")]
-[assembly: AssemblyDescription("A simple C# wrapper for accessing cPanel APIs")]
+[assembly: AssemblyDescription("A simple C# wrapper for accessing CPanel APIs")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
 [assembly: AssemblyProduct("cPanelSharpTest")]

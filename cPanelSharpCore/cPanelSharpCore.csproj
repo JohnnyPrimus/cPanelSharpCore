@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>cPanelSharpCore</RootNamespace>
+    <VersionPrefix>4.0.0</VersionPrefix>
+    <Authors>Shrayas, zeal, JohnnyPrimus</Authors>
+    <Company>Shrayas, zeal, PARTNERS.BIZ LLC</Company>
+    <Description>A simple C# wrapper for accessing CPanel APIs for .NET Core</Description>
+    <Copyright>Copyright 2016, 2020, 2024</Copyright>
+    <PackageTags>api wrapper CPanel</PackageTags>
+    <PackageReleaseNotes>No functionality changes from 3.0.0 and full drop-in replacement</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/JohnnyPrimus/cPanelSharpCore</PackageProjectUrl>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/JohnnyPrimus/cPanelSharpCore</RepositoryUrl>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>cPanelSharpCore</Title>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RestSharp" Version="108.0.3" />
+  </ItemGroup>
+
+</Project>

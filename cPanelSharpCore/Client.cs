@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace cPanelSharp
+namespace cPanelSharpCore
 {
     public class cPanelClient
     {
@@ -16,14 +16,14 @@ namespace cPanelSharp
         private int _port;
 
         public cPanelClient(string username, string host, string password = null, string accessHash = null, 
-            bool ssl = true, bool cpanel = false)
+            bool ssl = true, bool cPanel = false)
         {
             _username = username;
             _host = host;
 
             if (password.IsEmpty() && accessHash.IsEmpty())
                 throw new MissingCredentialsException();
-            else if ((!password.IsEmpty() && !accessHash.IsEmpty()) || (cpanel && !accessHash.IsEmpty()))
+            else if ((!password.IsEmpty() && !accessHash.IsEmpty()) || (cPanel && !accessHash.IsEmpty()))
                 throw new InvalidCredentialsException();
             else if (!accessHash.IsEmpty())
             {
@@ -35,9 +35,9 @@ namespace cPanelSharp
 
             _protocol = ssl ? "https" : "http";
 
-            _port = cpanel ? 2082 : 2086;
+            _port = cPanel ? 2082 : 2086;
             if (ssl)
-                _port = cpanel ? 2083 : 2087;
+                _port = cPanel ? 2083 : 2087;
         }
 
         public string Api1(string module, string func, object user = null, object param = null)
@@ -74,7 +74,7 @@ namespace cPanelSharp
             else if (func.IsEmpty())
                 throw new InvalidParametersException("Function parameter required");
 
-            return Call("cpanel", parameters);
+            return Call("CPanel", parameters);
         }
 
         private string Call(string command, IDictionary<string, string> parameters)

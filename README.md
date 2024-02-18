@@ -48,7 +48,9 @@ var response = client.Api2("Email", "listpops", new
 
 ## Credits
 
-All credits to https://github.com/vexxhost/python-cpanelapi
+Client based on the work of vexxhost, at https://github.com/vexxhost/python-cpanelapi
+Originally rewritten in C# by shrayasr, at https://github.com/shrayasr/cPanelSharp
+Updated to .NET Core by zealofzebras, at https://github.com/zealofzebras/cPanelSharpCore
 
 ## Caveats
 
