@@ -1,8 +1,8 @@
-﻿using cPanelSharp;
+﻿using cPanelSharpCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace cPanelSharpTest
+namespace cPanelSharpCoreTest
 {
     [TestClass]
     public class ClientTest
@@ -14,9 +14,9 @@ namespace cPanelSharpTest
         [ClassInitialize]
         public static void Setup(TestContext context)
         {
-            _hostname = Environment.GetEnvironmentVariable("CPANELSHARP:TEST:HOSTNAME");
-            _username = Environment.GetEnvironmentVariable("CPANELSHARP:TEST:USERNAME");
-            _password = Environment.GetEnvironmentVariable("CPANELSHARP:TEST:PASSWORD");
+            _hostname = Environment.GetEnvironmentVariable("CPANELSHARPCORE:TEST:HOSTNAME");
+            _username = Environment.GetEnvironmentVariable("CPANELSHARPCORE:TEST:USERNAME");
+            _password = Environment.GetEnvironmentVariable("CPANELSHARPCORE:TEST:PASSWORD");
         }
 
         [TestMethod]
@@ -35,15 +35,15 @@ namespace cPanelSharpTest
 
         [TestMethod]
         [ExpectedException(typeof(InvalidCredentialsException))]
-        public void CpanelAndAccessHashThrowsException()
+        public void CPanelAndAccessHashThrowsException()
         {
-            var client = new cPanelClient(_username, _hostname, accessHash: "foo", cpanel: true);
+            var client = new cPanelClient(_username, _hostname, accessHash: "foo", cPanel: true);
         }
 
         [TestMethod]
         public void ValidCredsCreatesClient()
         {
-            var client = new cPanelClient(_username, _hostname, password: _password, cpanel: true);
+            var client = new cPanelClient(_username, _hostname, password: _password, cPanel: true);
             Assert.IsNotNull(client);
         }
 
@@ -67,14 +67,14 @@ namespace cPanelSharpTest
         [ExpectedException(typeof(InvalidParametersException))]
         public void NoFunctionThrowsException()
         {
-            var client = new cPanelClient(_username, _hostname, password: _password, cpanel: true);
+            var client = new cPanelClient(_username, _hostname, password: _password, cPanel: true);
             client.Api2("fooModule", "");
         }
 
         [TestMethod]
         public void GetMonthlyBandwidthReturnsBandwidth()
         {
-            var client = new cPanelClient(_username, _hostname, password: _password, cpanel: true);
+            var client = new cPanelClient(_username, _hostname, password: _password, cPanel: true);
             var bandwidthResponse = client.Api2("Stats", "getmonthlybandwidth");
 
             Assert.IsTrue(bandwidthResponse.Length > 0);
@@ -83,7 +83,7 @@ namespace cPanelSharpTest
         [TestMethod]
         public void GetEmailsByRegexReturnsEmails()
         {
-            var client = new cPanelClient(_username, _hostname, password: _password, cpanel: true);
+            var client = new cPanelClient(_username, _hostname, password: _password, cPanel: true);
             var emailListResponse = client.Api2("Email", "listpops", param: new { regex = "pr" });
 
             Assert.IsTrue(emailListResponse.Length > 0);

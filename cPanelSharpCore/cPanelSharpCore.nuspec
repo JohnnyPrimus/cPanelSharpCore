@@ -9,7 +9,7 @@
     <licenseUrl>https://github.com/shrayasr/cPanelSharp/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/zealofzebras/cPanelSharp</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>A simple C# wrapper for accessing cPanel APIs</description>
+    <description>A simple C# wrapper for accessing CPanel APIs</description>
     <releaseNotes>.NetStandard Version</releaseNotes>
     <copyright>Copyright 2016</copyright>
     <tags>api wrapper</tags>

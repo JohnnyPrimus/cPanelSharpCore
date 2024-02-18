@@ -1,4 +1,4 @@
-﻿namespace cPanelSharp
+﻿namespace cPanelSharpCore
 {
     public static class Extensions
     {
