@@ -19,6 +19,8 @@
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <IncludeSymbols>True</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <IncrementVersionOnBuild>4.yyyy.Mdd.Hmm</IncrementVersionOnBuild>
+    <Version>4.2024.218.734</Version>
   </PropertyGroup>
 
   <ItemGroup>
